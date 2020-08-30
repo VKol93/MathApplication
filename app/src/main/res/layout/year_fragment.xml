@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="@+id/yearEditText" />
 
     <TextView
-        android:id="@+id/outputtextView"
+        android:id="@+id/yearoutputtextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
