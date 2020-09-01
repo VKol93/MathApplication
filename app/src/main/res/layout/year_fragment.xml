@@ -8,12 +8,13 @@
 
     <EditText
         android:id="@+id/yearEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/okButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,41 +22,44 @@
         android:id="@+id/randomButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="Random"
+        android:layout_marginTop="16dp"
+        android:text="@string/random"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/yearEditText" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yearEditText" />
 
     <TextView
         android:id="@+id/yearoutputtextView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="411dp"
+        android:layout_height="540dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/yearEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/randomButton" />
 
     <ImageButton
         android:id="@+id/okButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/randomButton"
-        app:layout_constraintStart_toEndOf="@+id/yearEditText"
+        android:layout_width="43dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="ok"
+        app:layout_constraintEnd_toStartOf="@+id/clearButton"
         app:layout_constraintTop_toTopOf="@+id/yearEditText"
         app:srcCompat="@drawable/ic_baseline_check_24" />
 
-    <Button
+    <ImageButton
         android:id="@+id/clearButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Clear"
-        app:layout_constraintTop_toBottomOf="@+id/yearEditText"
-        tools:layout_editor_absoluteX="17dp" />
+        android:layout_width="41dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="clear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/yearEditText"
+        app:srcCompat="@drawable/ic_baseline_clear_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

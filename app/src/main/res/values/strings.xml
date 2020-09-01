@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Math Aplication</string>
+    <string name="random">Random year</string>
 </resources>

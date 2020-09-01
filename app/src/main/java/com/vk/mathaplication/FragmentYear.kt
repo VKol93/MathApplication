@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.year_fragment.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.random.Random
 
 class FragmentYear : Fragment() {
 
@@ -42,7 +43,10 @@ class FragmentYear : Fragment() {
         clearButton.setOnClickListener {
             yearEditText.text.clear()
         }
-
+        randomButton.setOnClickListener {
+            val randomYear = Random.nextInt(0,2021)
+            yearEditText.setText(randomYear.toString())
+        }
 
     }
 
