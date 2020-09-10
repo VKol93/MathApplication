@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/fragmentData"
-        android:name="com.vk.mathaplication.FragmentData"
+        android:name="com.vk.mathaplication.FragmentDate"
         android:label="FragmentData" />
     <fragment
         android:id="@+id/fragmentMath"

@@ -15,6 +15,15 @@ private val retrofit = Retrofit.Builder()
 interface ApiRemoteService {
     @GET("{yearValue}/year")
     fun getYearFact(@Path("yearValue")yearValue: Int): Call<String>
+    @GET("{number}/math")
+    fun getMathFact(@Path("number")number: Int): Call<String>
+
+    @GET("{month}/{date}/date")
+    fun getDateFact(@Path("month")month: Int, @Path("date")date: Int): Call<String>
+
+    @GET("{number}")
+    fun getTriviaFact(@Path("number")number: Int): Call<String>
+
 }
 val remoteService : ApiRemoteService by lazy {
     retrofit.create(ApiRemoteService::class.java) }

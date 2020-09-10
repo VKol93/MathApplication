@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.data_fragment.okButton
-import kotlinx.android.synthetic.main.data_fragment.yearEditText
 import kotlinx.android.synthetic.main.year_fragment.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,15 +23,15 @@ class FragmentYear : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        okButton.setOnClickListener {
-            val year = yearEditText.text.toString()
+        okButtonYear.setOnClickListener {
+            val year = editTextYear.text.toString()
             remoteService.getYearFact(year.toInt()).enqueue(object : Callback<String> {
                 override fun onResponse(call: Call<String>, response: Response<String>) {
-                    yearoutputtextView.text = response.body()
+                  yearOutputTextView.text = response.body()
                 }
 
                 override fun onFailure(call: Call<String>, t: Throwable) {
-                    yearoutputtextView.text = "Server error bye"
+                    yearOutputTextView.text = "Server error bye"
                     Log.d("mylog",t.message)
                 }
 
@@ -41,11 +39,11 @@ class FragmentYear : Fragment() {
 
         }
         clearButton.setOnClickListener {
-            yearEditText.text.clear()
+            editTextYear.text.clear()
         }
-        randomButton.setOnClickListener {
+        randomYearButton.setOnClickListener {
             val randomYear = Random.nextInt(0,2021)
-            yearEditText.setText(randomYear.toString())
+            editTextYear.setText(randomYear.toString())
         }
 
     }
